@@ -1,0 +1,24 @@
+{
+  "name": "todo-app-main",
+  "version": "1.0.0",
+  "description": "todo pagina para praticar tailwindcss...",
+  "main": "index.js",
+  "scripts": {
+    "tailwindcss": "tailwindcss -i ./src/style/index.css -o ./src/style/tailwind.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matheus369k/todo-app.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matheus369k/todo-app/issues"
+  },
+  "homepage": "https://github.com/matheus369k/todo-app/",
+  "dependencies": {
+    "jquery": "^3.7.1",
+    "tailwindcss": "^3.4.1"
+  }
+}
