@@ -12,6 +12,12 @@ module.exports = {
       },
       width: {
         '500': '500px',
+      },
+      borderWidth: {
+        '1': '1px',
+      },
+      fontFamily: {
+        'Josefin': ['Josefin', 'sans-serif'] 
       }
     },
   },

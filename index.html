@@ -21,7 +21,7 @@
 
     <title>Frontend Mentor | Todo app</title>
   </head>
-  <body class="dark:bg-darkMode-bg">
+  <body class="dark:bg-darkMode-bg font-Josefin transition-all">
     <header
       class="bg-cover h-80 flex flex-col justify-end items-center"
       style="
@@ -50,7 +50,7 @@
       </div>
       <form class="relative w-500 m-auto mb-20" onsubmit="onsubmit">
         <input
-          class="focus:border-none focus: outline-none text-gray-400 w-full h-16 rounded bg-darkMode-container pl-16 text-2xl"
+          class="focus:border-none focus:outline-none text-gray-400 w-full h-14 rounded bg-darkMode-container pl-16 text-lg"
           autocomplete="off"
           title="Search"
           type="text"
@@ -58,21 +58,60 @@
           id="search"
         />
         <button
-          class="absolute top-1/2 -translate-y-1/2 left-5 p-3 rounded-full border-2 border-gray-600 border-solid"
+          class="absolute top-1/2 -translate-y-1/2 left-5 h-6 w-6 rounded-full border-1 border-gray-600 border-solid"
           title="Add"
           type="submit"
         ></button>
       </form>
     </header>
     <main>
-      <ul class="relative -top-14 w-500 h-full bg-darkMode-container m-auto">
-        <li
-          class="h-16 grid grid-cols-8 items-center"
-        >
-          <button
-            class="col-1 bg-gradient-to-tr from-gradientColor-btn-from to-gradientColor-btn-to flex justify-center items-center h-6 w-6 rounded-full border-2 border-gray-400 border-solid ml-4"
+      <div
+        class="relative -top-14 w-500 h-full bg-darkMode-container m-auto rounded shadow-lg shadow-black"
+      >
+        <ul>
+          <li
+            class="group/clean h-16 grid grid-cols-8 items-center border-b-1 border-solid border-gray-600"
           >
-            <svg
+            <button
+              class="col-1 bg-gradient-to-tr from-gradientColor-btn-from to-gradientColor-btn-to flex justify-center items-center h-6 w-6 rounded-full border-1 border-gray-600 border-solid ml-4"
+            >
+              <svg
+                class="opacity-1 text-2xl"
+                xmlns="http://www.w3.org/2000/svg"
+                width="11"
+                height="9"
+              >
+                <path
+                  fill="none"
+                  stroke="#FFF"
+                  stroke-width="2"
+                  d="M1 4.304L3.696 7l6-6"
+                />
+              </svg>
+            </button>
+            <span
+              class="w-max text-gray-600 font-semibold col-span-6 line-through cursor-pointer text-base select-none"
+              >Do you need maker of buys
+            </span>
+            <i
+              class="invisible group-hover/clean:visible rmr-4 col-9 justify-self-center cursor-pointer"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                <path
+                  fill="#494C6B"
+                  fill-rule="evenodd"
+                  d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
+                />
+              </svg>
+            </i>
+          </li>
+          <li
+            class="group/clean h-16 grid grid-cols-8 items-center border-b-1 border-solid border-gray-600"
+          >
+            <button
+              class="col-1 flex justify-center items-center h-6 w-6 rounded-full border-1 border-gray-600 border-solid ml-4 hover:border-r-gradientColor-btn-from hover:border-b-gradientColor-btn-from hover:border-t-gradientColor-btn-to hover:border-l-gradientColor-btn-to transition-all"
+            >
+              <!-- <svg
               class="opacity-1 text-2xl"
               xmlns="http://www.w3.org/2000/svg"
               width="11"
@@ -84,35 +123,51 @@
                 stroke-width="2"
                 d="M1 4.304L3.696 7l6-6"
               />
-            </svg>
-          </button>
-          <span class="w-max text-gray-500 font-bold col-span-6"
-            >Do you need maker of buys
-          </span>
-          <i class="mr-4 col-9 justify-self-end">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
-              <path
-                fill="#494C6B"
-                fill-rule="evenodd"
-                d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
-              />
-            </svg>
-          </i>
-        </li>
-        <li>
-          <ul class="flex justify-between items-center h-12 p-2 w-full rounded">
-            <li>
-              <!-- Add dynamic number -->
-              items left
+            </svg> -->
+            </button>
+            <span
+              class="w-max text-gray-400 font-semibold col-span-6 select-none"
+              >Do you need maker of buys
+            </span>
+            <i 
+            class="invisible group-hover/clean:visible rmr-4 col-9 justify-self-center text-base cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                <path
+                  fill="#494C6B"
+                  fill-rule="evenodd"
+                  d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
+                />
+              </svg>
+            </i>
+          </li>
+        </ul>
+        <div
+          class="flex justify-between items-center h-12 p-2 w-full font-bold text-xs text-gray-400 select-none"
+        >
+          <span class="text-gray-600 lowercase">5 items left</span>
+          <ul class="flex">
+            <li
+              class="cursor-pointer capitalize p-2 text-blue-600 hover:text-gray-100"
+            >
+              All
             </li>
-            <li>All</li>
-            <li>Active</li>
-            <li>Completed</li>
-            <li>Clear Completed</li>
+            <li class="cursor-pointer capitalize p-2 hover:text-gray-100">
+              Active
+            </li>
+            <li class="cursor-pointer capitalize p-2 hover:text-gray-100">
+              Completed
+            </li>
           </ul>
-        </li>
-      </ul>
-      <p>Drag and drop to reorder list</p>
+          <button
+            class="hover:text-white capitalize"
+            type="button"
+            title="Clear"
+          >
+            Clear Completed
+          </button>
+        </div>
+      </div>
+      <p class="relative -top-6 left-auto text-center text-xs text-gray-700 font-bold">Drag and drop to reorder list</p>
     </main>
   </body>
 </html>
