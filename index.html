@@ -59,6 +59,7 @@
         />
         <button
           class="absolute top-1/2 -translate-y-1/2 left-5 h-6 w-6 rounded-full border-1 border-gray-600 border-solid"
+          id="btn_submit"
           title="Add"
           type="submit"
         ></button>
@@ -68,42 +69,28 @@
       <div
         class="relative -top-14 w-500 h-full bg-darkMode-container m-auto rounded shadow-lg shadow-black"
       >
-        <ul>
+        <ul id="list_quest">
           <li
             class="group/clean h-16 grid grid-cols-8 items-center border-b-1 border-solid border-gray-600"
           >
             <button
               class="col-1 bg-gradient-to-tr from-gradientColor-btn-from to-gradientColor-btn-to flex justify-center items-center h-6 w-6 rounded-full border-1 border-gray-600 border-solid ml-4"
             >
-              <svg
-                class="opacity-1 text-2xl"
-                xmlns="http://www.w3.org/2000/svg"
-                width="11"
-                height="9"
-              >
-                <path
-                  fill="none"
-                  stroke="#FFF"
-                  stroke-width="2"
-                  d="M1 4.304L3.696 7l6-6"
-                />
-              </svg>
+              <img src="./src/assets/icon-check.svg" alt="icon-check" />
             </button>
             <span
               class="w-max text-gray-600 font-semibold col-span-6 line-through cursor-pointer text-base select-none"
               >Do you need maker of buys
             </span>
-            <i
-              class="invisible group-hover/clean:visible rmr-4 col-9 justify-self-center cursor-pointer"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
-                <path
-                  fill="#494C6B"
-                  fill-rule="evenodd"
-                  d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
-                />
-              </svg>
-            </i>
+            <button
+            type="button"
+            title="Close"
+            class="invisible group-hover/clean:visible rmr-4 col-9 justify-self-center text-base cursor-pointer">
+              <img
+                src="./src/assets/icon-cross.svg"
+                alt="icon-close"
+              />
+            </button>
           </li>
           <li
             class="group/clean h-16 grid grid-cols-8 items-center border-b-1 border-solid border-gray-600"
@@ -111,33 +98,21 @@
             <button
               class="col-1 flex justify-center items-center h-6 w-6 rounded-full border-1 border-gray-600 border-solid ml-4 hover:border-r-gradientColor-btn-from hover:border-b-gradientColor-btn-from hover:border-t-gradientColor-btn-to hover:border-l-gradientColor-btn-to transition-all"
             >
-              <!-- <svg
-              class="opacity-1 text-2xl"
-              xmlns="http://www.w3.org/2000/svg"
-              width="11"
-              height="9"
-            >
-              <path
-                fill="none"
-                stroke="#FFF"
-                stroke-width="2"
-                d="M1 4.304L3.696 7l6-6"
-              />
-            </svg> -->
+              <!--<img src="./src/assets/icon-check.svg" alt="icon-check" />-->
             </button>
             <span
               class="w-max text-gray-400 font-semibold col-span-6 select-none"
               >Do you need maker of buys
             </span>
-            <i 
+            <button
+            type="button"
+            title="Close"
             class="invisible group-hover/clean:visible rmr-4 col-9 justify-self-center text-base cursor-pointer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
-                <path
-                  fill="#494C6B"
-                  fill-rule="evenodd"
-                  d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
-                />
-              </svg>
+              <img
+                src="./src/assets/icon-cross.svg"
+                alt="icon-close"
+              />
+            </button>
             </i>
           </li>
         </ul>
@@ -169,5 +144,6 @@
       </div>
       <p class="relative -top-6 left-auto text-center text-xs text-gray-700 font-bold">Drag and drop to reorder list</p>
     </main>
+    <script type="module" src="./src/js/index.mjs"></script>
   </body>
 </html>
