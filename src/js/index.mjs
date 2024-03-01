@@ -9,7 +9,8 @@ const btnSubmit = document.getElementById('btn_submit');
 
 // criando o evento de ativação....
 btnSubmit.addEventListener('click', (e) => {
-    AddElementQuest(e)
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    AddElementQuest();
+    checkedQuest();
 })
-
-checkedQuest()
