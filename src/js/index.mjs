@@ -1,9 +1,15 @@
-import createrQuest from './createrQuest/index.mjs';
+import {
+    AddElementQuest
+} from "./createrQuest/addQuest/index.mjs";
+import {
+    checkedQuest
+} from './addRemoveStatusComplet/index.mjs';
 
 const btnSubmit = document.getElementById('btn_submit');
-const father = document.getElementById('list_quest')
 
+// criando o evento de ativação....
 btnSubmit.addEventListener('click', (e) => {
-    e.preventDefault()
-    createrQuest(father)
+    AddElementQuest(e)
 })
+
+checkedQuest()
