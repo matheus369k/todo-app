@@ -24,6 +24,7 @@ export function renderListQuest() {
                 );
             });
         }
+        document.getElementById('countquest').innerHTML= `${listAllQuest.length} items left`
         checkedQuest();
     }
 }
