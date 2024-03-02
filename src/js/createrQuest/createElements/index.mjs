@@ -9,7 +9,8 @@ export const createrDomElement = (tagHtml, father, id, style, url, text, name) =
     if (tagHtml == 'img')
         element.setAttribute('src', url);
 
-    if (name)element.setAttribute('name', name)
+    if (name)
+        element.setAttribute('name', name)
 
     element.setAttribute('class', style);
 

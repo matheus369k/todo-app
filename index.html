@@ -48,29 +48,44 @@
           </svg>
         </i>
       </div>
-      <form class="relative w-500 m-auto mb-20" onsubmit="onsubmit">
-        <input
-          class="focus:border-none focus:outline-none text-gray-400 w-full h-14 rounded bg-darkMode-container pl-16 text-lg"
-          autocomplete="off"
-          title="Search"
-          type="text"
-          name="search"
-          id="search"
-        />
+      <div class="relative w-500 m-auto mb-20">
+        <form onsubmit="onsubmit">
+          <input
+            class="focus:border-none focus:outline-none text-gray-400 w-full h-14 rounded bg-darkMode-container pl-16 text-lg"
+            autocomplete="off"
+            title="Search"
+            type="text"
+            name="search"
+            id="search"
+          />
+          <input id="btn_submit" class="hidden" title="Add" type="submit" />
+        </form>
         <button
           class="absolute top-1/2 -translate-y-1/2 left-5 h-6 w-6 rounded-full border-1 border-gray-600 border-solid"
-          id="btn_submit"
-          title="Add"
-          type="submit"
+          title="Selected All"
+          type="button"
+          id="btn_select_all"
         ></button>
-      </form>
+      </div>
     </header>
     <main>
       <div
         class="relative -top-14 w-500 h-full bg-darkMode-container m-auto rounded shadow-lg shadow-black"
       >
         <ul id="list_quest">
-          
+          <li
+            class="group/clean h-16 grid grid-cols-8 items-center border-b-1 border-solid border-gray-600"
+          >
+            <button
+              class="col-1 flex justify-center items-center h-6 w-6 rounded-full border-1 border-gray-600 border-solid ml-4 hover:border-r-gradientColor-btn-from hover:border-b-gradientColor-btn-from hover:border-t-gradientColor-btn-to hover:border-l-gradientColor-btn-to transition-all"
+            ></button
+            ><span
+              class="w-max font-semibold col-span-6 text-gray-400 cursor-pointer text-base select-none"
+            ></span
+            ><button
+              class="invisible group-hover/clean:visible rmr-4 col-9 justify-self-center text-base cursor-pointer"
+            ></button>
+          </li>
         </ul>
         <div
           class="flex justify-between items-center h-12 p-2 w-full font-bold text-xs text-gray-400 select-none"
@@ -98,7 +113,11 @@
           </button>
         </div>
       </div>
-      <p class="relative -top-6 left-auto text-center text-xs text-gray-700 font-bold">Drag and drop to reorder list</p>
+      <p
+        class="relative -top-6 left-auto text-center text-xs text-gray-700 font-bold"
+      >
+        Drag and drop to reorder list
+      </p>
     </main>
     <script type="module" src="./src/js/index.mjs"></script>
   </body>

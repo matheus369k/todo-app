@@ -1,37 +1,40 @@
 import {
     createrDomElement
-} from "../createrQuest/createElements/index.mjs";
+} from "../../createrQuest/createElements/index.mjs";
 import {
+    styleAllSelectbtn,
     styleQuestComplet,
     styleQuestComponents
-} from "../styleComponents/styleComponents.mjs";
+} from "../../styleComponents/styleComponents.mjs";
 
-export function checkedQuest() {
+export function checkedQuest(btn_select_all) {
     document.getElementsByName('buttons_status').forEach((element, index) => {
-        element.addEventListener('click', (e) => {            
+        element.addEventListener('click', (e) => {
             e.stopImmediatePropagation()
 
-            console.log(document.getElementsByName('buttons_status'))
-            const icon_checked = document.getElementById(`icon_checked_index-${index+1}`);
             const button_checked_quest = document.getElementById(`btn_checked_index-${index+1}`);
             const span_message_questy = document.getElementById(`span_message_index-${index+1}`);
             const url_checked_icon = './src/assets/icon-check.svg';
-            console.log(button_checked_quest)
 
 
             // verificar se deve remover ou adicionar o status de completa...
             if (button_checked_quest.getAttribute('data-status') == 'active') {
-                console.log('true')
 
-                button_checked_quest.removeChild(icon_checked)
+                button_checked_quest.removeChild(button_checked_quest.firstChild)
 
                 span_message_questy.setAttribute('class', styleQuestComponents.span_message);
                 button_checked_quest.setAttribute('class', styleQuestComponents.button_checked);
 
                 button_checked_quest.removeAttribute('data-status')
 
+                if (btn_select_all) {
+                    
+                    btn_select_all.removeChild(btn_select_all.firstChild);
+
+                    btn_select_all.setAttribute('class', styleAllSelectbtn.all_select_off);
+                }
+
             } else {
-                console.log('false')
 
                 button_checked_quest.setAttribute('data-status', 'active')
 
