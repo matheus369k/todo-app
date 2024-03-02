@@ -14,11 +14,12 @@ import {
 } from "./styleComponents/styleComponents.mjs";
 
 
-import './renderListQuest/index.mjs'
+import {renderListQuest}  from './renderListQuest/index.mjs'
 
 const btn_submit = document.getElementById('btn_submit');
 const btn_select_all = document.getElementById('btn_select_all');
 
+renderListQuest();
 
 btn_submit.addEventListener('click', (e) => {
     e.preventDefault();

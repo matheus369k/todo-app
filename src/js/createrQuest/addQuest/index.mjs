@@ -6,7 +6,10 @@ import {
     QuestObjectAll,
     SpanMessageObjectQuest
 } from "../../createObjectQuest/index.mjs";
-import { checkedQuest } from "../../statusComplet/addRemove/index.mjs";
+import { renderListQuest } from "../../renderListQuest/index.mjs";
+import {
+    checkedQuest
+} from "../../statusComplet/addRemove/index.mjs";
 import {
     styleQuestComponents
 } from "../../styleComponents/styleComponents.mjs";
@@ -56,33 +59,12 @@ export function AddElementQuest() {
     const list_quest = document.getElementById('list_quest');
     const length_list = list_quest.childElementCount + 1;
 
-    // criando o elemnto li...
-    createrDomElement(
-        'li',
-        list_quest,
-        `container_questy_index-${length_list}`,
-        styleQuestComponents.li_quest
-    );
-
     const liObjectQuest = new LiObjectQuest(
         'li',
         'list_quest',
         `container_questy_index-${length_list}`,
         styleQuestComponents.li_quest
     )
-
-    // criando o elemnto button checked...
-    const quest_element = document.getElementById(`container_questy_index-${length_list}`);
-
-    createrDomElement(
-        'button',
-        quest_element,
-        `btn_checked_index-${length_list}`,
-        styleQuestComponents.button_checked,
-        '',
-        '',
-        'buttons_status'
-    );
 
     const buttonCheckedObjectQuest = new ButtonCheckedObjectQuest(
         'button',
@@ -92,33 +74,17 @@ export function AddElementQuest() {
         'buttons_status'
     );
 
-    // criando a menssgem...
-    const input_value = document.getElementById('search').value;
-
-    createrDomElement(
-        'span',
-        quest_element,
-        `span_message_index-${length_list}`,
-        styleQuestComponents.span_message,
-        '',
-        input_value
-    );
+    const input_value = document.getElementById('search');
 
     const spanMessageObjectQuest = new SpanMessageObjectQuest(
         'span',
         `container_questy_index-${length_list}`,
         `span_message_index-${length_list}`,
         styleQuestComponents.span_message,
-        input_value
+        input_value.value
     );
 
-    // criando o elemnto button close...
-    createrDomElement(
-        'button',
-        quest_element,
-        `btn_closed_index-${length_list}`,
-        styleQuestComponents.button_closed
-    );
+    input_value.value=''
 
     const buttonClosedObjectQuest = new ButtonClosedObjectQuest(
         'button',
@@ -127,17 +93,7 @@ export function AddElementQuest() {
         styleQuestComponents.button_closed
     );
 
-    // crinado elemento clean
     const url_closed_icon = './src/assets/icon-cross.svg';
-    const button_closed_quest = document.getElementById(`btn_closed_index-${length_list}`);
-
-    createrDomElement(
-        'img',
-        button_closed_quest,
-        `icon_closed_index-${length_list}`,
-        '',
-        url_closed_icon
-    );
 
     const iconsClosedObjectQuest = new IconsClosedObjectQuest(
         'img',
@@ -155,7 +111,7 @@ export function AddElementQuest() {
     );
 
     if (localStorage.listQuests) {
-        
+
         const questListAll = [...JSON.parse(localStorage.listQuests), questObjectAll]
 
         localStorage.setItem('listQuests', `${JSON.stringify(questListAll)}`)
@@ -165,5 +121,5 @@ export function AddElementQuest() {
         localStorage.setItem('listQuests', `[${JSON.stringify(questObjectAll)}]`)
 
     }
-    checkedQuest();
+    renderListQuest();
 }
