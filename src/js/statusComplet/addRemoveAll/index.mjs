@@ -15,7 +15,7 @@ export function AddAllStatusComplet(action) {
 
         if (action == 'remove') {
 
-            if (all_checked_btn[index].getAttribute('data-status') != 'active') continue;
+            if (!all_checked_btn[index].getAttribute('data-status')) continue;
 
             button_checked_quest.removeChild(button_checked_quest.firstChild)
 
@@ -26,7 +26,7 @@ export function AddAllStatusComplet(action) {
 
         } else {
 
-            if (all_checked_btn[index].getAttribute('data-status') == 'active') continue;
+            if (all_checked_btn[index].getAttribute('data-status')) continue;
 
             button_checked_quest.setAttribute('data-status', 'active')
 

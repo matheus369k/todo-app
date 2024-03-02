@@ -7,21 +7,23 @@ import {
 import {
     AddAllStatusComplet
 } from "./statusComplet/addRemoveAll/index.mjs";
-import {
-    checkedQuest
-} from './statusComplet/addRemove/index.mjs';
+
+import './statusComplet/addRemove/index.mjs';
 import {
     styleAllSelectbtn
 } from "./styleComponents/styleComponents.mjs";
 
+
+import './renderListQuest/index.mjs'
+
 const btn_submit = document.getElementById('btn_submit');
 const btn_select_all = document.getElementById('btn_select_all');
+
 
 btn_submit.addEventListener('click', (e) => {
     e.preventDefault();
     e.stopImmediatePropagation();
     AddElementQuest();
-    checkedQuest(btn_select_all);
 
     if (btn_select_all.firstChild) {
 
@@ -52,3 +54,4 @@ function AddStatusSelectAllQuerys(action) {
         createrDomElement('img', btn_select_all, 'icon_all_select', '', url_checked_icon);
     }
 }
+
