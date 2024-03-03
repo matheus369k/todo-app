@@ -14,6 +14,8 @@ export function removeElemetsQuest() {
                     object_all_quest.splice(index, 1);
             })
 
+            
+
             localStorage.setItem('listQuests', JSON.stringify(object_all_quest));
         })
     })
