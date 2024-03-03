@@ -21,7 +21,7 @@ export function controlStateofStatus(action, index, all_checked_btn) {
 
         button_checked_quest.removeAttribute('data-status')
 
-        if (btn_select_all.firstChild && all_checked_btn) {
+        if (btn_select_all.firstChild) {
 
             btn_select_all.firstChild.remove();
 

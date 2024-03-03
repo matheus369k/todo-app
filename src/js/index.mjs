@@ -1,19 +1,14 @@
 import {
     AddElementQuest,
-    createrDomElement
 } from "./createrQuest/index.mjs";
 
 import {
-    AddAllStatusComplet
+    AddStatusSelectAllQuerys
 } from "./statusComplet/addRemoveAll/index.mjs";
 
 import {
     renderListQuest
 } from './renderListQuest/index.mjs'
-
-import {
-    styleAllSelectbtn
-} from "./styleComponents/styleComponents.mjs";
 
 import './statusComplet/addRemove/index.mjs';
 
@@ -26,33 +21,9 @@ document.getElementById('btn_submit').addEventListener('click', (e) => {
     e.stopImmediatePropagation();
     AddElementQuest();
 
-    if (element_select_all.firstChild) {
-
-        element_select_all.firstChild.remove()
-
-        element_select_all.attr('class', styleAllSelectbtn.all_select_off);
-    }
+    AddStatusSelectAllQuerys('', element_select_all)
 });
 
-element_select_all.addEventListener('click', AddStatusSelectAllQuerys);
-
-function AddStatusSelectAllQuerys(action) {
-    const url_checked_icon = './src/assets/icon-check.svg';
-
-    if (element_select_all.hasChildNodes() || action == 'remove') {
-
-        element_select_all.firstChild.remove();
-
-        element_select_all.setAttribute('class', styleAllSelectbtn.all_select_off);
-
-        AddAllStatusComplet('remove');
-
-    } else {
-
-        AddAllStatusComplet('add');
-
-        element_select_all.setAttribute('class', styleAllSelectbtn.all_select_on);
-
-        createrDomElement('img', element_select_all, 'icon_all_select', '', url_checked_icon);
-    }
-}
+element_select_all.addEventListener('click', () => {
+    AddStatusSelectAllQuerys('toggleAll', element_select_all)
+})

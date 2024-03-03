@@ -57,7 +57,10 @@ const list = [
 
 export function AddElementQuest() {
     const list_quest = document.getElementById('list_quest');
+    const input_value = document.getElementById('search');
     const length_list = list_quest.childElementCount + 1;
+
+    if (input_value.value.length < 3) return;
 
     const liObjectQuest = new LiObjectQuest(
         'li',
@@ -73,8 +76,6 @@ export function AddElementQuest() {
         styleQuestComponents.button_checked,
         'buttons_status'
     );
-
-    const input_value = document.getElementById('search');
 
     const spanMessageObjectQuest = new SpanMessageObjectQuest(
         'span',

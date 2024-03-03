@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.scroll-persona::-webkit-scrollbar {
+    background-color: transparent;
+    width: 10px;
+}
+.scroll-persona::-webkit-scrollbar-thumb {
+    background-color: hsl(237, 14%, 26%);
+    border-radius: 20px;
+}

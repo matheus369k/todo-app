@@ -4,7 +4,8 @@ export {
 from './addRemove/index.mjs'
 
 export {
-    AddAllStatusComplet
+    AddAllStatusComplet,
+    AddStatusSelectAllQuerys
 }
 from './addRemoveAll/index.mjs'
 
