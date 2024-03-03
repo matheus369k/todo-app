@@ -1,58 +1,58 @@
 import {
-    AddElementQuest
-} from "./createrQuest/addQuest/index.mjs";
-import {
+    AddElementQuest,
     createrDomElement
-} from "./createrQuest/createElements/index.mjs";
+} from "./createrQuest/index.mjs";
+
 import {
     AddAllStatusComplet
 } from "./statusComplet/addRemoveAll/index.mjs";
 
-import './statusComplet/addRemove/index.mjs';
+import {
+    renderListQuest
+} from './renderListQuest/index.mjs'
+
 import {
     styleAllSelectbtn
 } from "./styleComponents/styleComponents.mjs";
 
+import './statusComplet/addRemove/index.mjs';
 
-import {renderListQuest}  from './renderListQuest/index.mjs'
+const element_select_all = document.getElementById('btn_select_all');
 
-const btn_submit = document.getElementById('btn_submit');
-const btn_select_all = document.getElementById('btn_select_all');
+window.addEventListener('load', renderListQuest())
 
-renderListQuest();
-
-btn_submit.addEventListener('click', (e) => {
+document.getElementById('btn_submit').addEventListener('click', (e) => {
     e.preventDefault();
     e.stopImmediatePropagation();
     AddElementQuest();
 
-    if (btn_select_all.firstChild) {
+    if (element_select_all.firstChild) {
 
-        btn_select_all.removeChild(btn_select_all.firstChild);
+        element_select_all.firstChild.remove()
 
-        btn_select_all.setAttribute('class', styleAllSelectbtn.all_select_off);
+        element_select_all.attr('class', styleAllSelectbtn.all_select_off);
     }
-})
+});
 
-btn_select_all.addEventListener('click', AddStatusSelectAllQuerys)
+element_select_all.addEventListener('click', AddStatusSelectAllQuerys);
 
 function AddStatusSelectAllQuerys(action) {
     const url_checked_icon = './src/assets/icon-check.svg';
 
-    if (btn_select_all.hasChildNodes() || action == 'remove') {
+    if (element_select_all.hasChildNodes() || action == 'remove') {
 
-        btn_select_all.removeChild(btn_select_all.firstChild);
+        element_select_all.firstChild.remove();
 
-        btn_select_all.setAttribute('class', styleAllSelectbtn.all_select_off);
+        element_select_all.setAttribute('class', styleAllSelectbtn.all_select_off);
 
         AddAllStatusComplet('remove');
 
     } else {
+
         AddAllStatusComplet('add');
 
-        btn_select_all.setAttribute('class', styleAllSelectbtn.all_select_on);
+        element_select_all.setAttribute('class', styleAllSelectbtn.all_select_on);
 
-        createrDomElement('img', btn_select_all, 'icon_all_select', '', url_checked_icon);
+        createrDomElement('img', element_select_all, 'icon_all_select', '', url_checked_icon);
     }
 }
-

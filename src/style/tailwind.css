@@ -632,20 +632,8 @@ video {
   height: 100%;
 }
 
-.max-h-2 {
-  max-height: 0.5rem;
-}
-
 .max-h-80 {
   max-height: 20rem;
-}
-
-.max-h-72 {
-  max-height: 18rem;
-}
-
-.max-h-7 {
-  max-height: 1.75rem;
 }
 
 .w-500 {
