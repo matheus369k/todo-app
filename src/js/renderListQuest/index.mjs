@@ -2,6 +2,7 @@ import { createrDomElement } from "../createrQuest/createElements/index.mjs";
 import { checkedQuest } from "../statusComplet/addRemove/index.mjs";
 
 export function renderListQuest() {
+    console.log('render')
     if (localStorage.listQuests) {
 
         const listAllQuest = JSON.parse(localStorage.listQuests);

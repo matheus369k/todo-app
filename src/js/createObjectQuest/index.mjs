@@ -51,17 +51,20 @@ export class SpanMessageObjectQuest extends LiObjectQuest {
 }
 
 export class ButtonClosedObjectQuest extends LiObjectQuest {
+    name;
     constructor(
         _tagName,
         _dad,
         _id,
-        _style
+        _style,
+        _name
     ) {
         super();
         this.tagName = _tagName;
         this.dad = _dad;
         this.id = _id;
         this.style = _style;
+        this.name = _name;
     }
 }
 

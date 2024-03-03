@@ -6,54 +6,15 @@ import {
     QuestObjectAll,
     SpanMessageObjectQuest
 } from "../../createObjectQuest/index.mjs";
-import { renderListQuest } from "../../renderListQuest/index.mjs";
+
 import {
-    checkedQuest
-} from "../../statusComplet/addRemove/index.mjs";
+    renderListQuest
+} from "../../renderListQuest/index.mjs";
+
 import {
     styleQuestComponents
 } from "../../styleComponents/styleComponents.mjs";
 
-import {
-    createrDomElement
-} from "../createElements/index.mjs";
-
-/* 
-const list = [
-    {
-        li: {
-            tagName: 'li',
-            dad: list_quest,
-            id: `container_questy_index-${length_list}`,
-            style: styleQuestComponents.li_quest
-        },
-        buttonChecked: {
-            tagName: 'button',
-            dad: quest_element,
-            id: `btn_checked_index-${length_list}`,
-            style: styleQuestComponents.button_checked,
-            dataStatus:  'buttons_status'
-        },
-        spanMessage: {
-            tagName: 'span',
-            dad: quest_element,
-            id: `span_message_index-${length_list}`,
-            text: input_value
-        },
-        buttonClosed: {
-            tagName: 'button',
-            dad: quest_element,
-            id: `btn_closed_index-${length_list}`,
-            style: styleQuestComponents.button_closed
-        },
-        iconClosed: {
-            tagName: 'img',
-            dad: button_closed_quest,
-            id: `icon_closed_index-${length_list}`,
-            url: url_closed_icon
-        }
-    }
-] */
 
 export function AddElementQuest() {
     const list_quest = document.getElementById('list_quest');
@@ -85,13 +46,14 @@ export function AddElementQuest() {
         input_value.value
     );
 
-    input_value.value=''
+    input_value.value = ''
 
     const buttonClosedObjectQuest = new ButtonClosedObjectQuest(
         'button',
         `container_questy_index-${length_list}`,
         `btn_closed_index-${length_list}`,
-        styleQuestComponents.button_closed
+        styleQuestComponents.button_closed,
+        'buttons_close'
     );
 
     const url_closed_icon = './src/assets/icon-cross.svg';
