@@ -1,13 +1,26 @@
-import { createrDomElement } from "../createrQuest/createElements/index.mjs";
-import { checkedQuest } from "../statusComplet/addRemove/index.mjs";
+import {
+    createrDomElement
+} from "../createrQuest/createElements/index.mjs";
+import {
+    removeElemetsQuest
+} from "../removeQuest/index.mjs";
+import {
+    checkedQuest
+} from "../statusComplet/addRemove/index.mjs";
 
-export function renderListQuest() {
-    console.log('render')
+export function renderListQuest(action) {
     if (localStorage.listQuests) {
 
-        const listAllQuest = JSON.parse(localStorage.listQuests);
+        const object_all_quest = JSON.parse(localStorage.listQuests);
+        const list_all_quest = document.querySelectorAll('#list_quest>li');
 
-        for (const quest of listAllQuest) {
+        if (action == 're-render') {
+            list_all_quest.forEach(element => {
+                element.parentNode?.removeChild(element);
+            })
+        }
+
+        for (const quest of object_all_quest) {
 
             if (document.getElementById(quest.li.id)) continue;
 
@@ -25,7 +38,8 @@ export function renderListQuest() {
                 );
             });
         }
-        document.getElementById('countquest').innerHTML= `${listAllQuest.length} items left`
+        document.getElementById('countquest').innerHTML = `${object_all_quest.length} items left`
+        removeElemetsQuest();
         checkedQuest();
     }
 }
