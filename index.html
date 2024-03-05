@@ -90,20 +90,30 @@
         <div
           class="flex justify-between items-center h-12 p-2 w-full font-bold text-xs text-gray-400 select-none"
         >
-          <span id="countquest" class="text-gray-600 lowercase after:co">0 items left</span>
-          <ul class="flex">
+          <span id="countquest" class="text-gray-600 lowercase after:co"
+            >0 items left</span
+          >
+          <ul name="filter-container" class="flex">
             <li
+              name="All"
               class="cursor-pointer capitalize p-2 text-blue-600 hover:text-gray-100"
             >
               All
             </li>
-            <li class="cursor-pointer capitalize p-2 hover:text-gray-100">
+            <li
+              name="Active"
+              class="cursor-pointer capitalize p-2 hover:text-gray-100"
+            >
               Active
             </li>
-            <li class="cursor-pointer capitalize p-2 hover:text-gray-100">
+            <li
+              name="Completed"
+              class="cursor-pointer capitalize p-2 hover:text-gray-100"
+            >
               Completed
             </li>
           </ul>
+
           <button
             class="hover:text-white capitalize"
             type="button"

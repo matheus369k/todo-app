@@ -8,7 +8,7 @@ import {
     checkedQuest
 } from "../statusComplet/addRemove/index.mjs";
 
-export function renderListQuest(action) {
+export function renderListQuest(action, filter) {
     if (localStorage.listQuests) {
 
         const object_all_quest = JSON.parse(localStorage.listQuests);
@@ -24,6 +24,10 @@ export function renderListQuest(action) {
         for (const quest of object_all_quest) {
 
             if (document.getElementById(quest.li.id)) continue;
+
+            if (filter == 'Active' && quest.buttonChecked.status) continue;
+
+            if (filter == 'Completed' && !quest.buttonChecked.status) continue;
 
             Object.values(quest).map((element, index) => {
                 const fother = document.getElementById(element.dad);
@@ -43,7 +47,6 @@ export function renderListQuest(action) {
 
                     fotherICon.setAttribute('data-status', 'active')
 
-                    console.log(element.status)
                     createrDomElement(
                         'img',
                         fotherICon,

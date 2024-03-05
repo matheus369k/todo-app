@@ -13,8 +13,12 @@ import {
 import {
     removeElemetsQuest
 } from "./removeQuest/index.mjs";
+import {
+    filterQuest
+} from "./filterQuest/index.mjs";
 
 const element_select_all = document.getElementById('btn_select_all');
+const filter_elements = document.querySelectorAll('[name="filter-container"]>li');
 
 window.addEventListener('load', renderListQuest())
 
@@ -33,3 +37,9 @@ element_select_all.addEventListener('click', () => {
 })
 
 window.addEventListener('load', removeElemetsQuest())
+
+filter_elements.forEach(filter => {
+    filter.addEventListener('click', () => {
+        filterQuest(filter)
+    })
+})
