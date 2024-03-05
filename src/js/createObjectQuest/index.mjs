@@ -7,7 +7,7 @@ export class LiObjectQuest {
         _tagName,
         _dad,
         _id,
-        _style
+        _style,
     ) {
         this.tagName = _tagName;
         this.dad = _dad;
@@ -19,16 +19,22 @@ export class LiObjectQuest {
 export class ButtonCheckedObjectQuest extends LiObjectQuest {
     dataStatus;
     name;
+    status;
     constructor(
-        _tagName, _dad, _id, _style, /* _dataStatus, */ _name
+        _tagName,
+        _dad,
+        _id,
+        _style,
+        _name,
+        _status
     ) {
         super()
         this.tagName = _tagName;
         this.dad = _dad;
         this.id = _id;
-        this.style = _style;/* 
-        this.dataStatus = _dataStatus; */
+        this.style = _style;
         this.name = _name
+        this.status = _status
     }
 }
 
@@ -68,7 +74,7 @@ export class ButtonClosedObjectQuest extends LiObjectQuest {
     }
 }
 
-export class IconsClosedObjectQuest extends LiObjectQuest {
+export class IconsObjectQuest extends LiObjectQuest {
     url;
     constructor(
         _tagName,

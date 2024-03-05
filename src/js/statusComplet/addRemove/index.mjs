@@ -19,6 +19,7 @@ export function checkedQuest() {
             } else {
 
                 controlStateofStatus('add', index);
+
                 
                 if (all_quest.length == all_list.length + 1)
                     AddStatusSelectAllQuerys('', element_select_all);

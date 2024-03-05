@@ -24,7 +24,8 @@ document.getElementById('btn_submit').addEventListener('click', (e) => {
 
     AddElementQuest();
 
-    AddStatusSelectAllQuerys('', element_select_all)
+    if (element_select_all.hasChildNodes())
+        AddStatusSelectAllQuerys('', element_select_all)
 });
 
 element_select_all.addEventListener('click', () => {

@@ -1,7 +1,7 @@
 import {
     ButtonCheckedObjectQuest,
     ButtonClosedObjectQuest,
-    IconsClosedObjectQuest,
+    IconsObjectQuest,
     LiObjectQuest,
     QuestObjectAll,
     SpanMessageObjectQuest
@@ -35,7 +35,8 @@ export function AddElementQuest() {
         `container_questy_index-${length_list}`,
         `btn_checked_index-${length_list}`,
         styleQuestComponents.button_checked,
-        'buttons_status'
+        'buttons_status',
+        false
     );
 
     const spanMessageObjectQuest = new SpanMessageObjectQuest(
@@ -58,7 +59,7 @@ export function AddElementQuest() {
 
     const url_closed_icon = './src/assets/icon-cross.svg';
 
-    const iconsClosedObjectQuest = new IconsClosedObjectQuest(
+    const iconsClosedObjectQuest = new IconsObjectQuest(
         'img',
         `btn_closed_index-${length_list}`,
         `icon_closed_index-${length_list}`,
