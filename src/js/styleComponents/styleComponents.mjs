@@ -17,3 +17,8 @@ export const styleAllSelectbtn = {
     all_select_on: 'absolute top-1/2 -translate-y-1/2 left-5 h-6 w-6 rounded-full border-1 border-gray-600 border-solid  bg-gradient-to-tr from-gradientColor-btn-from to-gradientColor-btn-to flex justify-center items-center',
     all_select_off: 'absolute top-1/2 -translate-y-1/2 left-5 h-6 w-6 rounded-full border-1 border-gray-600 border-solid'
 }
+
+export const filterElements = {
+    element_active: 'cursor-pointer capitalize p-2 text-blue-600',
+    element_default: 'cursor-pointer capitalize p-2 hover:text-gray-100'
+}

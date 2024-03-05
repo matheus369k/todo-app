@@ -96,7 +96,8 @@
           <ul name="filter-container" class="flex">
             <li
               name="All"
-              class="cursor-pointer capitalize p-2 text-blue-600 hover:text-gray-100"
+              data-filter-status="active"
+              class="cursor-pointer capitalize p-2 text-blue-600"
             >
               All
             </li>
@@ -117,6 +118,7 @@
           <button
             class="hover:text-white capitalize"
             type="button"
+            id="btn-remove-all-complet"
             title="Clear"
           >
             Clear Completed

@@ -9,57 +9,57 @@ import {
 } from "../statusComplet/addRemove/index.mjs";
 
 export function renderListQuest(action, filter) {
-    if (localStorage.listQuests) {
 
-        const object_all_quest = JSON.parse(localStorage.listQuests);
-        const url_checked_icon = './src/assets/icon-check.svg';
-        const list_all_quest = document.querySelectorAll('#list_quest>li');
+    if (!localStorage.listQuests) return;
 
-        if (action == 're-render') {
-            list_all_quest.forEach(element => {
-                element.parentNode?.removeChild(element);
-            })
-        }
+    const object_all_quest = JSON.parse(localStorage.listQuests);
+    const url_checked_icon = './src/assets/icon-check.svg';
+    const list_all_quest = document.querySelectorAll('#list_quest>li');
 
-        for (const quest of object_all_quest) {
+    if (action == 're-render') {
+        list_all_quest.forEach(element => {
+            element.parentNode?.removeChild(element);
+        })
+    }
 
-            if (document.getElementById(quest.li.id)) continue;
+    for (const quest of object_all_quest) {
 
-            if (filter == 'Active' && quest.buttonChecked.status) continue;
+        if (document.getElementById(quest.li.id)) continue;
 
-            if (filter == 'Completed' && !quest.buttonChecked.status) continue;
+        if (filter == 'Active' && quest.buttonChecked.status) continue;
 
-            Object.values(quest).map((element, index) => {
-                const fother = document.getElementById(element.dad);
+        if (filter == 'Completed' && !quest.buttonChecked.status) continue;
+
+        Object.values(quest).map((element, index) => {
+            const fother = document.getElementById(element.dad);
+
+            createrDomElement(
+                element.tagName,
+                fother,
+                element.id,
+                element.style,
+                element.url,
+                element.text,
+                element.name
+            );
+
+            if (element.status) {
+                const fotherICon = document.getElementById(element.id);
+
+                fotherICon.setAttribute('data-status', 'active')
 
                 createrDomElement(
-                    element.tagName,
-                    fother,
-                    element.id,
-                    element.style,
-                    element.url,
-                    element.text,
-                    element.name
+                    'img',
+                    fotherICon,
+                    `icon_checked_index-${index+1}`,
+                    '',
+                    url_checked_icon
                 );
-
-                if (element.status) {
-                    const fotherICon = document.getElementById(element.id);
-
-                    fotherICon.setAttribute('data-status', 'active')
-
-                    createrDomElement(
-                        'img',
-                        fotherICon,
-                        `icon_checked_index-${index+1}`,
-                        '',
-                        url_checked_icon
-                    );
-
-                }
-            });
-        }
-        removeElemetsQuest();
-        checkedQuest();
-        document.getElementById('countquest').innerHTML = `${object_all_quest.length} items left`
+            }
+        });
     }
+    removeElemetsQuest();
+    checkedQuest();
+    const count_quest = document.getElementById('list_quest').childElementCount;
+    document.getElementById('countquest').innerHTML = `${count_quest} items left`;
 }
