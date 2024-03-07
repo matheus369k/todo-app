@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,37 +21,22 @@
 
     <title>Frontend Mentor | Todo app</title>
   </head>
-  <body class="dark:bg-darkMode-bg font-Josefin transition-all">
+  <body class="bg-darkMode-bg <!-- bg-lightMode-bg --> font-Josefin transition-all">
     <header
       class="bg-cover h-80 flex flex-col justify-end items-center"
-      style="
-        background-image: url(./src/assets/bg-desktop-dark.jpg);
-        font-family: 'Josefin Sans', sans-serif;
-      "
+      style="background-image: url(./src/assets/bg-desktop-dark.jpg);"
     >
       <div class="flex justify-between items-center h-full w-500 mt-20">
         <h1 class="text-5xl tracking-widest font-bold uppercase text-white">
           Todo
         </h1>
-        <i class="cursor-pointer">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="26"
-            height="26"
-            class="text-sm"
-          >
-            <path
-              fill="#FFF"
-              fill-rule="evenodd"
-              d="M13 0c.81 0 1.603.074 2.373.216C10.593 1.199 7 5.43 7 10.5 7 16.299 11.701 21 17.5 21c2.996 0 5.7-1.255 7.613-3.268C23.22 22.572 18.51 26 13 26 5.82 26 0 20.18 0 13S5.82 0 13 0z"
-            />
-          </svg>
-        </i>
+        <button title="Trocar tema dark/light" type="button" id="btn-switch-themer"><img class="cursor-pointer" src="./src/assets/icon-moon.svg" alt="Icon trocor Tema"/></button>
       </div>
       <div class="relative w-500 m-auto mb-20">
         <form onsubmit="onsubmit">
           <input
-            class="focus:border-none focus:outline-none text-gray-400 w-full h-14 rounded bg-darkMode-container pl-16 text-lg"
+            class="focus:border-none focus:outline-none text-gray-400 placeholder:text-gray-600 w-full h-14 rounded bg-darkMode-container <!-- bg-lightMode-container text-gray-400--> pl-16 text-lg"
+            placeholder="Create a new todo..."
             autocomplete="off"
             title="Search"
             type="text"
@@ -70,11 +55,12 @@
     </header>
     <main>
       <div
-        class="relative -top-14 w-500 h-full bg-darkMode-container m-auto rounded shadow-lg shadow-black"
+        class="relative -top-14 w-500 h-full bg-darkMode-container <!-- bg-lightMode-container --> m-auto rounded shadow-lg shadow-black"
+        id="container-list"
       >
-        <ul id="list_quest" class="max-h-80 overflow-y-scroll scroll-persona">
+        <ul id="list_quest" class="pl-2 max-h-80 overflow-y-scroll scroll-persona">
           <!-- <li
-            class="group/clean h-16 grid grid-cols-8 items-center border-b-1 border-solid border-gray-600"
+            class="group/clean h-16 grid grid-cols-8 items-center border-b-1 border-solid border-gray-600 border-gray-400"
           >
             <button
               class="col-1 bg-gradient-to-tr from-gradientColor-btn-from to-gradientColor-btn-to flex justify-center items-center h-6 w-6 rounded-full border-1 border-gray-600 border-solid ml-4 transition-all"
@@ -89,7 +75,8 @@
         </ul>
         <div
           class="flex justify-between items-center h-12 p-2 w-full font-bold text-xs text-gray-400 select-none"
-        >
+          id="container-filter"
+        > <!-- hover:text-gray-900 -->
           <span id="countquest" class="text-gray-600 lowercase after:co"
             >0 items left</span
           >
@@ -116,7 +103,7 @@
           </ul>
 
           <button
-            class="hover:text-white capitalize"
+            class="hover:text-gray-100 capitalize font-semibold"
             type="button"
             id="btn-remove-all-complet"
             title="Clear"
@@ -126,7 +113,8 @@
         </div>
       </div>
       <p
-        class="relative -top-6 left-auto text-center text-xs text-gray-700 font-bold"
+        class="relative -top-6 left-auto text-center text-xs text-gray-700 font-bold <!-- text-gray-400 -->"
+        id="bottom-message"
       >
         Drag and drop to reorder list
       </p>

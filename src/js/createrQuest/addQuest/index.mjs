@@ -36,7 +36,9 @@ export function AddElementQuest() {
         `btn_checked_index-${length_list}`,
         styleQuestComponents.button_checked,
         'buttons_status',
-        false
+        false,
+        'button',
+        'Confirmar/Remover status de missão completa!'
     );
 
     const spanMessageObjectQuest = new SpanMessageObjectQuest(
@@ -54,7 +56,9 @@ export function AddElementQuest() {
         `container_questy_index-${length_list}`,
         `btn_closed_index-${length_list}`,
         styleQuestComponents.button_closed,
-        'buttons_close'
+        'buttons_close',
+        'button',
+        'Apagar missão'
     );
 
     const url_closed_icon = './src/assets/icon-cross.svg';
@@ -63,7 +67,8 @@ export function AddElementQuest() {
         'img',
         `btn_closed_index-${length_list}`,
         `icon_closed_index-${length_list}`,
-        url_closed_icon
+        url_closed_icon,
+        'icon de apagar missão'
     );
 
     const questObjectAll = new QuestObjectAll(

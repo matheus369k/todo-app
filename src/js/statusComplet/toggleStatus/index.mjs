@@ -1,12 +1,16 @@
-import { IconsObjectQuest } from "../../createObjectQuest/index.mjs";
 import {
     createrDomElement
 } from "../../createrQuest/createElements/index.mjs";
+
 import {
-    styleAllSelectbtn,
+    ThemerStyle,
     styleQuestComplet,
     styleQuestComponents
 } from "../../styleComponents/styleComponents.mjs";
+
+import {
+    toggleListQuestElemenstThemer
+} from "../../themer/index.mjs";
 
 export function controlStateofStatus(action, index, all_checked_btn) {
     const button_checked_quest = document.getElementById(`btn_checked_index-${index+1}`);
@@ -28,13 +32,6 @@ export function controlStateofStatus(action, index, all_checked_btn) {
         object_list_quest[index_quest].buttonChecked.style = styleQuestComponents.button_checked;
         object_list_quest[index_quest].spanMessage.style = styleQuestComponents.span_message;
 
-        if (btn_select_all.firstChild) {
-
-            btn_select_all.firstChild.remove();
-
-            btn_select_all.setAttribute('class', styleAllSelectbtn.all_select_off);
-        }
-
     } else {
 
         button_checked_quest.setAttribute('class', styleQuestComplet.button_checked_complet);
@@ -46,7 +43,6 @@ export function controlStateofStatus(action, index, all_checked_btn) {
         object_list_quest[index_quest].buttonChecked.style = styleQuestComplet.button_checked_complet;
         object_list_quest[index_quest].spanMessage.style = styleQuestComplet.span_message_complet;
 
-
         if (all_checked_btn) {
 
             createrDomElement('img', all_checked_btn[index], `icon_checked_index-${index+1}`, '', url_checked_icon);
@@ -56,6 +52,18 @@ export function controlStateofStatus(action, index, all_checked_btn) {
             createrDomElement('img', button_checked_quest, `icon_checked_index-${index+1}`, '', url_checked_icon);
 
         }
+    }
+
+    if (localStorage.themer == 'dark') {
+        toggleListQuestElemenstThemer(
+            ThemerStyle.list_quest_elements_light,
+            ThemerStyle.list_quest_elements_dark
+        );
+    } else {
+        toggleListQuestElemenstThemer(
+            ThemerStyle.list_quest_elements_dark,
+            ThemerStyle.list_quest_elements_light
+        );
     }
 
     localStorage.setItem('listQuests', JSON.stringify(object_list_quest))

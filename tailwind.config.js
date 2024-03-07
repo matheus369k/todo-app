@@ -7,6 +7,8 @@ module.exports = {
       colors: {
         'darkMode-bg': 'hsl(235, 21%, 11%)',
         'darkMode-container': 'hsl(235, 24%, 19%)',
+        'lightMode-bg': 'hsl(0, 0%, 98%)',
+        'lightMode-container': 'hsl(236, 33%, 92%)',
         'gradientColor-btn-from': 'hsl(192, 100%, 67%)',
         'gradientColor-btn-to': ' hsl(280, 87%, 65%)'
       },

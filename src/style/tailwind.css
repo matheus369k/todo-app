@@ -720,14 +720,34 @@ video {
   border-style: solid;
 }
 
+.border-gray-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(156 163 175 / var(--tw-border-opacity));
+}
+
 .border-gray-600 {
   --tw-border-opacity: 1;
   border-color: rgb(75 85 99 / var(--tw-border-opacity));
 }
 
+.bg-darkMode-bg {
+  --tw-bg-opacity: 1;
+  background-color: hsl(235 21% 11% / var(--tw-bg-opacity));
+}
+
 .bg-darkMode-container {
   --tw-bg-opacity: 1;
   background-color: hsl(235 24% 19% / var(--tw-bg-opacity));
+}
+
+.bg-lightMode-bg {
+  --tw-bg-opacity: 1;
+  background-color: hsl(0 0% 98% / var(--tw-bg-opacity));
+}
+
+.bg-lightMode-container {
+  --tw-bg-opacity: 1;
+  background-color: hsl(236 33% 92% / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-tr {
@@ -756,6 +776,10 @@ video {
   padding-left: 4rem;
 }
 
+.pl-2 {
+  padding-left: 0.5rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -777,11 +801,6 @@ video {
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
-}
-
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
 }
 
 .text-xs {
@@ -838,6 +857,11 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-gray-200 {
+  --tw-text-opacity: 1;
+  color: rgb(229 231 235 / var(--tw-text-opacity));
+}
+
 .line-through {
   text-decoration-line: line-through;
 }
@@ -869,14 +893,24 @@ video {
   border-radius: 20px;
 }
 
+.placeholder\:text-gray-600::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+
+.placeholder\:text-gray-600::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+
 .hover\:text-gray-100:hover {
   --tw-text-opacity: 1;
   color: rgb(243 244 246 / var(--tw-text-opacity));
 }
 
-.hover\:text-white:hover {
+.hover\:text-gray-900:hover {
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 .focus\:border-none:focus {
@@ -890,9 +924,4 @@ video {
 
 .group\/clean:hover .group-hover\/clean\:visible {
   visibility: visible;
-}
-
-:is(.dark .dark\:bg-darkMode-bg) {
-  --tw-bg-opacity: 1;
-  background-color: hsl(235 21% 11% / var(--tw-bg-opacity));
 }

@@ -10,7 +10,6 @@ export function checkedQuest() {
     all_quest.forEach((element, index) => {
         element.addEventListener('click', (e) => {
             const button_checked_quest = document.getElementById(`btn_checked_index-${index+1}`);
-            const all_list = document.querySelectorAll('#list_quest>li>[name="buttons_status"]>img');
 
             if (button_checked_quest.getAttribute('data-status')) {
 
@@ -20,12 +19,21 @@ export function checkedQuest() {
 
                 controlStateofStatus('add', index);
 
-                
-                if (all_quest.length == all_list.length + 1)
-                    AddStatusSelectAllQuerys('', element_select_all);
             }
+
+            const all_list = document.querySelectorAll('#list_quest>li>[name="buttons_status"]>img');
+
+            if (
+                all_quest.length == all_list.length ||
+                (
+                    all_quest.length - 1 == all_list.length &&
+                    element_select_all.hasChildNodes()
+                )
+            )
+                AddStatusSelectAllQuerys('', element_select_all);
 
             e.stopPropagation();
         })
     })
+    
 }
