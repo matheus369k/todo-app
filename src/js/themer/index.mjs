@@ -76,6 +76,12 @@ export function detectedThemer(icon_switch_themer) {
             ThemerStyle.bottom_message_dark
         );
 
+        toggleSingleStyleElementThemer(
+            elements_filter[0].parentNode,
+            ThemerStyle.listStyleLight,
+            ThemerStyle.listStyleDark
+        )
+
         elements_filter.forEach(element => {
             element.classList.replace(
                 ThemerStyle.filterElementsLight.elementListFilter,
@@ -143,6 +149,12 @@ export function detectedThemer(icon_switch_themer) {
             ThemerStyle.bottom_message_dark,
             ThemerStyle.bottom_message_light
         );
+
+        toggleSingleStyleElementThemer(
+            elements_filter[0].parentNode,
+            ThemerStyle.listStyleDark,
+            ThemerStyle.listStyleLight
+        )
 
         elements_filter.forEach(element => {
             element.classList.replace(

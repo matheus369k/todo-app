@@ -3,13 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Pagina para anotar tarefas a se fazer..."
+    />
 
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./images/favicon-32x32.png"
+      href="./src/assets/favicon-32x32.png"
     />
+
     <link rel="stylesheet" href="./src/style/tailwind.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,21 +26,35 @@
 
     <title>Frontend Mentor | Todo app</title>
   </head>
-  <body class="bg-darkMode-bg <!-- bg-lightMode-bg --> font-Josefin transition-all">
+  <body
+    class="bg-darkMode-bg <!-- bg-lightMode-bg --> font-Josefin transition-all"
+  >
     <header
       class="bg-cover h-80 flex flex-col justify-end items-center"
-      style="background-image: url(./src/assets/bg-desktop-dark.jpg);"
+      style="background-image: url(./src/assets/bg-desktop-dark.jpg)"
     >
-      <div class="flex justify-between items-center h-full w-500 mt-20">
+      <div
+        class="flex justify-between items-center h-full w-11/12 sm:w-600 mt-20"
+      >
         <h1 class="text-5xl tracking-widest font-bold uppercase text-white">
           Todo
         </h1>
-        <button title="Trocar tema dark/light" type="button" id="btn-switch-themer"><img class="cursor-pointer" src="./src/assets/icon-moon.svg" alt="Icon trocor Tema"/></button>
+        <button
+          title="Trocar tema dark/light"
+          type="button"
+          id="btn-switch-themer"
+        >
+          <img
+            class="cursor-pointer"
+            src="./src/assets/icon-moon.svg"
+            alt="Icon trocor Tema"
+          />
+        </button>
       </div>
-      <div class="relative w-500 m-auto mb-20">
+      <div class="relative w-11/12 sm:w-600 m-auto mb-20">
         <form onsubmit="onsubmit">
           <input
-            class="focus:border-none focus:outline-none text-gray-400 placeholder:text-gray-600 w-full h-14 rounded bg-darkMode-container <!-- bg-lightMode-container text-gray-400--> pl-16 text-lg"
+            class="focus:border-none focus:outline-none text-gray-400 placeholder:text-gray-600 w-full h-14 rounded bg-darkMode-container <!-- bg-lightMode-container text-gray-400--> pl-12 sm:pl-16 text-sm font-bold sm:font-normal sm:text-lg"
             placeholder="Create a new todo..."
             autocomplete="off"
             title="Search"
@@ -46,7 +65,7 @@
           <input id="btn_submit" class="hidden" title="Add" type="submit" />
         </form>
         <button
-          class="absolute top-1/2 -translate-y-1/2 left-5 h-6 w-6 rounded-full border-1 border-gray-600 border-solid"
+          class="absolute top-1/2 -translate-y-1/2 left-4 sm:left-5 h-6 w-6 rounded-full border-1 border-gray-600 border-solid"
           title="Selected All"
           type="button"
           id="btn_select_all"
@@ -55,32 +74,39 @@
     </header>
     <main>
       <div
-        class="relative -top-14 w-500 h-full bg-darkMode-container <!-- bg-lightMode-container --> m-auto rounded shadow-lg shadow-black"
+        class="relative -top-14 w-11/12 sm:w-600 h-full bg-darkMode-container <!-- bg-lightMode-container --> m-auto rounded shadow-spread shadow-dark-opacity"
         id="container-list"
       >
-        <ul id="list_quest" class="pl-2 max-h-80 overflow-y-scroll scroll-persona">
+        <ul
+          id="list_quest"
+          class="sm:pl-2 max-h-80 overflow-y-scroll scroll-persona text-sm sm:text-base"
+        >
           <!-- <li
-            class="group/clean h-16 grid grid-cols-8 items-center border-b-1 border-solid border-gray-600 border-gray-400"
+            class="group/clean h-16 grid grid-cols-7 sm:grid-cols-8 items-center border-b-1 border-solid border-gray-600 border-gray-400"
           >
             <button
               class="col-1 bg-gradient-to-tr from-gradientColor-btn-from to-gradientColor-btn-to flex justify-center items-center h-6 w-6 rounded-full border-1 border-gray-600 border-solid ml-4 transition-all"
             ></button
             ><span
-              class="line-through w-max font-semibold col-span-6 text-gray-400 cursor-pointer text-base select-none"
+              class="w-max font-semibold col-span-5 sm:col-span-6 cursor-pointer text-base select-none text-gray-400 line-through "
             ></span
             ><button
-              class="invisible group-hover/clean:visible rmr-4 col-9 justify-self-center text-base cursor-pointer"
+              class="invisible group-hover/clean:visible rmr-4 col-7 sm:col-9 justify-self-center text-base cursor-pointer"
             ></button>
           </li> -->
         </ul>
         <div
-          class="flex justify-between items-center h-12 p-2 w-full font-bold text-xs text-gray-400 select-none"
+          class="relative flex justify-between items-center h-12 p-2 w-full font-bold text-sm sm:text-xs text-gray-400 select-none"
           id="container-filter"
-        > <!-- hover:text-gray-900 -->
-          <span id="countquest" class="text-gray-600 lowercase after:co"
+        >
+          <!-- hover:text-gray-900 -->
+          <span id="countquest" class="text-gray-600 lowercase min-w-20"
             >0 items left</span
           >
-          <ul name="filter-container" class="flex">
+          <ul
+            name="filter-container"
+            class="absolute sm:relative -bottom-20 sm:bottom-2 left-0 bg-darkMode-container <!-- bg-lightMode-container --> m-auto rounded w-full flex justify-center items-center shadow-spread shadow-dark-opacity sm:shadow-none h-12"
+          >
             <li
               name="All"
               data-filter-status="active"
@@ -103,7 +129,7 @@
           </ul>
 
           <button
-            class="hover:text-gray-100 capitalize font-semibold"
+            class="hover:text-gray-100 capitalize font-semibold min-w-32"
             type="button"
             id="btn-remove-all-complet"
             title="Clear"
@@ -113,13 +139,12 @@
         </div>
       </div>
       <p
-        class="relative -top-6 left-auto text-center text-xs text-gray-700 font-bold <!-- text-gray-400 -->"
+        class="relative top-10 sm:-top-6 left-auto text-center text-sm sm:text-xs text-gray-700 font-bold <!-- text-gray-400 -->"
         id="bottom-message"
       >
         Drag and drop to reorder list
       </p>
     </main>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script type="module" src="./src/js/index.mjs"></script>
   </body>
 </html>

@@ -32,7 +32,8 @@ const btn_switch_themer = document.getElementById('btn-switch-themer');
 window.addEventListener('load', renderListQuest())
 
 window.addEventListener('load', () => {
-    detectedThemer(btn_switch_themer.firstChild)
+    detectedThemer(btn_switch_themer.childNodes[1]);
+    removeHidderIconclosed();
 })
 
 document.getElementById('btn_submit').addEventListener('click', (e) => {
@@ -63,5 +64,25 @@ remove_all_complet_element.addEventListener('click', () => {
 })
 
 btn_switch_themer.addEventListener('click', () => {
-    switchThemer(btn_switch_themer.firstChild);
+    switchThemer(btn_switch_themer.childNodes[1]);
 })
+
+window.addEventListener('resize', () => removeHidderIconclosed())
+
+function removeHidderIconclosed() {
+    const hider_close_btn = document.querySelectorAll('#list_quest>li');
+
+    if (window.innerWidth < 640) {
+
+        hider_close_btn.forEach(element => {
+            element.childNodes[2].classList.remove('invisible');
+        });
+
+    } else {
+        const element_closed = document.getElementsByClassName('invisible');
+
+        hider_close_btn.forEach(element => {
+            element.childNodes[2].classList.add('invisible');
+        });
+    }
+}

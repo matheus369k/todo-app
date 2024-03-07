@@ -13,13 +13,19 @@ module.exports = {
         'gradientColor-btn-to': ' hsl(280, 87%, 65%)'
       },
       width: {
-        '500': '500px',
+        '600': '600px',
       },
       borderWidth: {
         '1': '1px',
       },
       fontFamily: {
         'Josefin': ['Josefin', 'sans-serif'] 
+      },
+      boxShadow: {
+        'spread': '4px 4px 10px 0'
+      },
+      boxShadowColor: {
+        'dark-opacity': 'hsl(235, 24%, 19%, .4)'
       }
     },
   },
