@@ -12,8 +12,6 @@ export function deleteAllComplet() {
 
     let object_all_quest = JSON.parse(localStorage.listQuests);
 
-    console.log(object_all_quest)
-
     object_all_quest = object_all_quest.filter(element => !element.buttonChecked.status);
 
     object_all_quest.forEach((element, index) => {

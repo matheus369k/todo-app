@@ -6,9 +6,11 @@ import {
 export function checkedQuest() {
     const all_quest = document.getElementsByName('buttons_status');
     const element_select_all = document.getElementById('btn_select_all');
+    console.log(all_quest)
 
     all_quest.forEach((element, index) => {
         element.addEventListener('click', (e) => {
+            e.stopImmediatePropagation();
             const button_checked_quest = document.getElementById(`btn_checked_index-${index+1}`);
 
             if (button_checked_quest.getAttribute('data-status')) {
@@ -29,11 +31,10 @@ export function checkedQuest() {
                     all_quest.length - 1 == all_list.length &&
                     element_select_all.hasChildNodes()
                 )
-            )
+            ) {
                 AddStatusSelectAllQuerys('', element_select_all);
-
-            e.stopPropagation();
+            }
         })
     })
-    
+
 }
