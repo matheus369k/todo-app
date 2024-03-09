@@ -72,7 +72,7 @@ btn_switch_themer.addEventListener('click', () => {
 
 window.addEventListener('resize', () => removeHidderIconclosed())
 
-function removeHidderIconclosed() {
+export function removeHidderIconclosed() {
     const hider_close_btn = document.querySelectorAll('#list_quest>li');
 
     if (window.innerWidth < 640) {

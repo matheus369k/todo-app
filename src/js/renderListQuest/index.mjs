@@ -1,6 +1,7 @@
 import {
     createrDomElement
 } from "../createrQuest/createElements/index.mjs";
+import { removeHidderIconclosed } from "../index.mjs";
 import {
     removeElemetsQuest
 } from "../removeQuest/index.mjs";
@@ -94,6 +95,7 @@ export function renderListQuest(action, filter) {
 
     removeElemetsQuest();
     checkedQuest();
+    removeHidderIconclosed();
     const count_quest = document.getElementById('list_quest').childElementCount;
     document.getElementById('countquest').innerHTML = `${count_quest} items left`;
 }
