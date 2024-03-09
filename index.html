@@ -26,9 +26,7 @@
 
     <title>Frontend Mentor | Todo app</title>
   </head>
-  <body
-    class="bg-darkMode-bg <!-- bg-lightMode-bg --> font-Josefin transition-all"
-  >
+  <body class="bg-darkMode-bg font-Josefin transition-all">
     <header
       class="bg-cover h-80 flex flex-col justify-end items-center"
       style="background-image: url(./src/assets/bg-desktop-dark.jpg)"
@@ -54,7 +52,7 @@
       <div class="relative w-11/12 sm:w-600 m-auto mb-20">
         <form onsubmit="onsubmit">
           <input
-            class="focus:border-none focus:outline-none text-gray-400 placeholder:text-gray-600 w-full h-14 rounded bg-darkMode-container <!-- bg-lightMode-container text-gray-400--> pl-12 sm:pl-16 text-sm font-bold sm:font-normal sm:text-lg"
+            class="focus:border-none focus:outline-none text-gray-400 placeholder:text-gray-600 w-full h-14 rounded bg-darkMode-container pl-12 sm:pl-16 text-sm font-bold sm:font-normal sm:text-lg"
             placeholder="Create a new todo..."
             autocomplete="off"
             title="Search"
@@ -74,38 +72,23 @@
     </header>
     <main>
       <div
-        class="relative -top-14 w-11/12 sm:w-600 h-full bg-darkMode-container <!-- bg-lightMode-container --> m-auto rounded shadow-spread shadow-dark-opacity"
+        class="relative -top-14 w-11/12 sm:w-600 h-full bg-darkMode-container m-auto rounded shadow-spread shadow-dark-opacity"
         id="container-list"
       >
         <ul
           id="list_quest"
           class="sm:pl-2 max-h-80 overflow-y-scroll scroll-persona text-sm sm:text-base"
-        >
-          <!-- <li
-            class="group/clean h-16 grid grid-cols-7 sm:grid-cols-8 items-center border-b-1 border-solid border-gray-600 border-gray-400"
-          >
-            <button
-              class="col-1 bg-gradient-to-tr from-gradientColor-btn-from to-gradientColor-btn-to flex justify-center items-center h-6 w-6 rounded-full border-1 border-gray-600 border-solid ml-4 transition-all"
-            ></button
-            ><span
-              class="w-max font-semibold col-span-5 sm:col-span-6 cursor-pointer text-base select-none text-gray-400 line-through "
-            ></span
-            ><button
-              class="invisible group-hover/clean:visible rmr-4 col-7 sm:col-9 justify-self-center text-base cursor-pointer"
-            ></button>
-          </li> -->
-        </ul>
+        ></ul>
         <div
           class="relative flex justify-between items-center h-12 p-2 w-full font-bold text-sm sm:text-xs text-gray-400 select-none"
           id="container-filter"
         >
-          <!-- hover:text-gray-900 -->
           <span id="countquest" class="text-gray-600 lowercase min-w-20"
             >0 items left</span
           >
           <ul
             name="filter-container"
-            class="absolute sm:relative -bottom-20 sm:bottom-2 left-0 bg-darkMode-container <!-- bg-lightMode-container --> m-auto rounded w-full flex justify-center items-center shadow-spread shadow-dark-opacity sm:shadow-none h-12"
+            class="absolute sm:relative -bottom-20 sm:bottom-2 left-0 bg-darkMode-container m-auto rounded w-full flex justify-center items-center shadow-spread shadow-dark-opacity sm:shadow-none h-12"
           >
             <li
               name="All"
@@ -139,7 +122,7 @@
         </div>
       </div>
       <p
-        class="relative top-10 sm:-top-6 left-auto text-center text-sm sm:text-xs text-gray-700 font-bold <!-- text-gray-400 -->"
+        class="relative top-10 sm:-top-6 left-auto text-center text-sm sm:text-xs text-gray-700 font-bold"
         id="bottom-message"
       >
         Drag and drop to reorder list
